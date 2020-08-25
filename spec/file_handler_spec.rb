@@ -26,22 +26,20 @@ RSpec.describe FileHandler do
       }
     end
 
-    it do
-      subject.call
+    before { subject.call }
 
-      expect(subject.success?).to be_truthy
-      expect(subject.errors).to be_empty
-      expect(subject.result).to eq(expected_result)
-    end
+    it { expect(subject.success?).to be_truthy }
+    it { expect(subject.errors).to be_empty }
+    it { expect(subject.result).to eq(expected_result) }
   end
 
   context 'invalid' do
-    let(:params) { 'server.log' }
+    let(:params) { file_name }
+    let(:file_name) { 'server.log' }
 
-    it do
-      subject.call
+    before { subject.call }
 
-      expect(subject.success?).to be_falsey
-    end
+    it { expect(subject.success?).to be_falsey }
+    it { expect(subject.errors).to include("No such file or directory @ rb_sysopen - #{file_name}") }
   end
 end

@@ -13,9 +13,11 @@ class ListViews < Callable
     result = file_handler.call
 
     if file_handler.success?
-      output_list(result)
+      print_list(result)
 
       success!
+    else
+      puts file_handler.errors
     end
   end
 
@@ -25,7 +27,7 @@ class ListViews < Callable
     @file_handler ||= FileHandler.new(file_name)
   end
 
-  def output_list(data)
+  def print_list(data)
     puts data[:most_page_views].map { |url, count| "#{url} #{count} visits" }.join("\n")
     puts data[:most_unique_views].map { |url, count| "#{url} #{count} unique views" }.join("\n")
   end

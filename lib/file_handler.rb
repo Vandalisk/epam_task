@@ -1,3 +1,4 @@
+require 'pry'
 require './lib/callable.rb'
 require './lib/db.rb'
 
@@ -14,9 +15,7 @@ class FileHandler < Callable
     return unless file
 
     with_database do |db|
-      file.each_line do |row|
-        insert_row(db, row)
-      end
+      file.each_line { |row| insert_row(db, row) }
 
       @result = { most_page_views: most_page_views(db), most_unique_views: most_unique_views(db) }
     end
@@ -32,8 +31,7 @@ class FileHandler < Callable
     begin
       File.open(file_name, 'r')
     rescue Errno::ENOENT => e
-      puts 'Exception occurred while file openning'
-      puts e
+      errors << e.message
 
       fail!
     end
