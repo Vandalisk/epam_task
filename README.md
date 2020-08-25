@@ -1,4 +1,4 @@
-* Task description
+## Task description
   
   A ruby script that receives a log as argument and returns list of webpages with most page views ordered from most pages views to less page views
   
@@ -8,18 +8,18 @@
   
   most unique page views: `/about/2 8 unique views /index 5 unique views etc...`
   
-* How to install section (makefile or bundle install)
+## How to install section (makefile or bundle install)
 
   `bundle install`
-* How to run app
+## How to run app
 
   `ruby ./parser.rb webserver.log`
   
   the file is already in root folder. You can use the file that you want to make it work.
-* How to run specs
+## How to run specs
 
   `rspec spec`
-* Approach description
+## Approach description
 
   The script is pretty simple. I decided to use only 4 files to do the work.
   
@@ -30,7 +30,7 @@
   **DB** is responsible for all database operations.
   
   **Callable** is a module that gives possibility to work with classes as they are services. To make it more convenient to dubug and check where and when something went wrong.
-* Possible Improvements (ideas)
+## Possible Improvements (ideas)
   Operations with db also can be checked on errors. Db settings should be added as variables to `.env` file. It really depends on the direction of the script.
   
   Probably db should be changed, but it will be easily done, cause `file_handler` don't know anything about database, it just use methods.
