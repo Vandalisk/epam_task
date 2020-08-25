@@ -15,7 +15,7 @@ class FileHandler < Callable
     return unless file
 
     with_database do |db|
-      file.each_line { |row| insert_row(db, row) }
+      insert_to_db_from_file(db)
 
       @result = { most_page_views: most_page_views(db), most_unique_views: most_unique_views(db) }
     end
@@ -25,6 +25,10 @@ class FileHandler < Callable
 
   def file
     @file ||= check_file
+  end
+
+  def insert_to_db_from_file(db)
+    file.each_line { |row| insert_row(db, row) }
   end
 
   def check_file

@@ -1,0 +1,18 @@
+---
+detectors:
+  TooManyStatements:
+    enabled: true
+    exclude:
+    - 'DB#with_database'
+  UtilityFunction:
+    enabled: false
+  InstanceVariableAssumption:
+    enabled: true
+    exclude:
+    - 'Callable'
+  MissingSafeMethod:
+    enabled: true
+    exclude:
+    - 'Callable'
+  UncommunicativeVariableName:
+    enabled: false
