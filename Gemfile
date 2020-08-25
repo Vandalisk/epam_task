@@ -1,5 +1,9 @@
-source "https://rubygems.org"
+# frozen_string_literal: false
 
-gem 'rspec', '~> 3.0'
-gem 'sqlite3'
+source 'https://rubygems.org'
+
 gem 'pry'
+gem 'reek'
+gem 'rspec', '~> 3.0'
+gem 'rubocop'
+gem 'sqlite3'

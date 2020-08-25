@@ -9,19 +9,19 @@ RSpec.describe FileHandler do
     let(:expected_result) do
       {
         most_page_views: [
-          ["/help_page", 3],
-          ["/about", 3],
-          ["/index", 1],
-          ["/home", 1],
-          ["/contact", 1]
+          ['/help_page', 3],
+          ['/about', 3],
+          ['/index', 1],
+          ['/home', 1],
+          ['/contact', 1]
         ],
         most_unique_views: [
-          ["/about/2", 2],
-          ["/index", 1],
-          ["/home", 1],
-          ["/help_page/1", 1],
-          ["/contact", 1],
-          ["/about", 1]
+          ['/about/2', 2],
+          ['/index', 1],
+          ['/home', 1],
+          ['/help_page/1', 1],
+          ['/contact', 1],
+          ['/about', 1]
         ]
       }
     end

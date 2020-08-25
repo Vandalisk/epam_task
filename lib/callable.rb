@@ -1,5 +1,5 @@
+# A special module that is responsible for attitude for ruby class as a service
 class Callable
-  attr_accessor :errors
   attr_reader :result
 
   def errors

@@ -1,7 +1,7 @@
 require 'pry'
 require './lib/callable.rb'
 require './lib/file_handler.rb'
-
+# A class that is responsible for calling a file handler and outputting the result.
 class ListViews < Callable
   attr_reader :file_name
 

@@ -1,7 +1,7 @@
 require 'pry'
 require './lib/callable.rb'
 require './lib/db.rb'
-
+# Class for handing file.
 class FileHandler < Callable
   include DB
 
@@ -28,12 +28,10 @@ class FileHandler < Callable
   end
 
   def check_file
-    begin
-      File.open(file_name, 'r')
-    rescue Errno::ENOENT => e
-      errors << e.message
+    File.open(file_name, 'r')
+  rescue Errno::ENOENT => e
+    errors << e.message
 
-      fail!
-    end
+    fail!
   end
 end

@@ -9,18 +9,18 @@ RSpec.describe ListViews do
     let(:file_handler_double) { double(:file_handler, call: handler_result, success?: true) }
     let(:handler_result) do
       {
-        most_page_views: [ ["/help_page", 3], ["/about", 3] ],
-        most_unique_views: [ ["/about/2", 2], ["/index", 1] ]
+        most_page_views: [['/help_page', 3], ['/about', 3]],
+        most_unique_views: [['/about/2', 2], ['/index', 1]]
       }
     end
 
     let(:expected_output) do
-      <<~eos
+      <<~OUTPUT
         /help_page 3 visits
         /about 3 visits
         /about/2 2 unique views
         /index 1 unique views
-      eos
+      OUTPUT
     end
 
     before { allow(FileHandler).to receive(:new).with(params).and_return(file_handler_double) }
